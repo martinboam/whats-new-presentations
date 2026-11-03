@@ -130,7 +130,7 @@ export async function preparePresentation(inputs, { token, repository, request =
     } else {
       release = await github(`releases/${release.id}`, {
         method: 'PATCH',
-        body: JSON.stringify({ name: inputs.title, body: inputs.notes })
+        body: JSON.stringify({ tag_name: release.tag_name, name: inputs.title, body: inputs.notes })
       });
     }
     const asset = await syncDraftAsset({ github, release, inputs, path, digest });
