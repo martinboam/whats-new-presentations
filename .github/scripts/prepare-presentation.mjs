@@ -35,7 +35,7 @@ export function validateInputs(inputs, repository) {
 
 export async function downloadSource(inputs, path, request = fetch) {
   const response = await request(inputs.source_url, {
-    headers: { 'If-Match': inputs.source_etag },
+    headers: { 'If-Match': inputs.source_etag, 'x-ms-version': '2023-11-03' },
     redirect: 'error',
     signal: AbortSignal.timeout(10 * 60 * 1000)
   });
