@@ -33,7 +33,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: presentation-drafts
+  group: presentation-draft-${{ inputs.tag }}
   cancel-in-progress: false
 
 jobs:
