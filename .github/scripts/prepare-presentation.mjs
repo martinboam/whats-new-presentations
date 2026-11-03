@@ -15,7 +15,10 @@ export function validateInputs(inputs, repository) {
   if (!/^(copilot|teams|agent365)-\d{4}-(0[1-9]|1[0-2])(?:-r[2-9]\d*)?$/i.test(inputs.tag)) {
     throw new Error('Invalid release tag.');
   }
-  if (!/^[a-zA-Z0-9._ -]+\.(pptx?|pdf)$/i.test(inputs.filename)) throw new Error('Invalid filename.');
+  if (typeof inputs.filename !== 'string' || inputs.filename.length > 255 ||
+      /[\\/\x00-\x1F\x7F]/.test(inputs.filename) || !/\.(pptx?|pdf)$/i.test(inputs.filename)) {
+    throw new Error('Invalid filename.');
+  }
   const url = new URL(inputs.source_url);
   const containers = { copilot: 'whatsnewcopilot', teams: 'whatsnewteams', agent365: 'whatsnewagent365' };
   const category = inputs.tag.split('-')[0].toLowerCase();
