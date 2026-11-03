@@ -1,0 +1,52 @@
+name: Prepare presentation draft
+run-name: Prepare ${{ inputs.request_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      request_id:
+        required: true
+        type: string
+      tag:
+        required: true
+        type: string
+      title:
+        required: true
+        type: string
+      notes:
+        required: true
+        type: string
+      source_url:
+        required: true
+        type: string
+      source_etag:
+        required: true
+        type: string
+      filename:
+        required: true
+        type: string
+      size:
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: presentation-drafts
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Copy public Azure file into draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPOSITORY: ${{ github.repository }}
+          PRESENTATION_INPUTS: ${{ toJSON(inputs) }}
+        run: node .github/scripts/prepare-presentation.mjs
