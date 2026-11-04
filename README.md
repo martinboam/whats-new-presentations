@@ -1,78 +1,82 @@
 # What's New Presentations
 
-Monthly presentations covering what's new in Microsoft 365 Copilot, Microsoft Teams, and Agent 365, curated by Martin Boam.
+Monthly Microsoft 365 Copilot, Microsoft Teams and Agent 365 presentations,
+curated by [Martin Boam](https://github.com/martinboam) for customers, partners
+and Microsoft colleagues.
 
-Designed for customers, partners, and Microsoft colleagues who want to stay informed about the latest features and capabilities.
+## One library, two complementary services
 
-Visit [What's New Central](https://whatsnewcentral.com/) to browse presentations, explore updates, and find related resources.
+- **[What's New Central](https://whatsnewcentral.com/downloads.html)** is the
+  main catalogue: browse products and editions, see covers, read summaries and
+  explore related resources.
+- **This repository's [Releases](https://github.com/martinboam/whats-new-presentations/releases)**
+  provide published presentation files and GitHub release notifications.
+  Each release links back to its edition on What's New Central.
 
-## Download presentations
+GitHub distribution is being introduced gradually. Editions not yet available
+here remain downloadable from What's New Central. A release subscription covers
+new GitHub publications, not every edition already available on the website.
 
-Published editions are available through
-[GitHub Releases](https://github.com/martinboam/whats-new-presentations/releases).
+## Latest editions published on GitHub
 
-1. Open the Releases page.
-2. Choose the edition you want.
-3. Expand **Assets** and download the PowerPoint or PDF, where available.
+These links are maintained automatically from published releases, by edition
+date rather than upload date. This is a shortcut, not a second catalogue.
+For the full library and editions not yet migrated, use What's New Central.
 
-A GitHub account is not required to download public release files.
+<!-- latest-presentations:start -->
+| Product | Latest GitHub edition | Full library |
+|---|---|---|
+| Microsoft 365 Copilot | [Microsoft 365 Copilot - August 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/copilot-2026-08) | [Browse editions](https://whatsnewcentral.com/downloads.html?category=copilot) |
+| Microsoft Teams | Not yet published on GitHub | [Browse editions](https://whatsnewcentral.com/downloads.html?category=teams) |
+| Agent 365 | Not yet published on GitHub | [Browse editions](https://whatsnewcentral.com/downloads.html?category=agent365) |
+<!-- latest-presentations:end -->
 
-**Publication is starting with the October 2026 edition.**
-Previous editions remain available through What's New Central while this publishing approach is piloted.
+## Download a presentation
 
-## Get notified about new editions
+Open an edition above or visit [Releases](https://github.com/martinboam/whats-new-presentations/releases).
+Use its download link, or expand **Assets** and choose the PowerPoint or PDF.
+A GitHub account is not required to download public release attachments.
+GitHub's automatically generated source-code ZIP/TAR files are not presentations.
 
-To subscribe to release notifications:
+The website's download button points directly to the GitHub attachment for
+migrated editions. You do not need to download the same presentation twice.
 
-1. Sign in to GitHub.
-2. Select **Watch** at the top of this repository.
-3. Choose **Custom**.
-4. Select **Releases**, then **Apply**.
+## Get notified
 
-GitHub will notify you when a new release is published. Email delivery depends on your [GitHub notification settings](https://github.com/settings/notifications).
+1. Sign in to GitHub and select **Watch** at the top of this repository.
+2. Choose **Custom**, select **Releases**, then **Apply**.
+3. Check your [GitHub notification settings](https://github.com/settings/notifications)
+   if you want email delivery.
 
-Release subscriptions cover all products in this repository.
-Starring the repository does not subscribe you to release alerts.
+Subscriptions cover **all products** in this repository. Starring the repository
+does not subscribe you to notifications. GitHub does not provide a per-product
+release subscription within this repository.
 
-## What's included
+Prefer a feed reader? Subscribe to the
+[GitHub releases Atom feed](https://github.com/martinboam/whats-new-presentations/releases.atom);
+no GitHub account is required.
 
-Depending on the edition, releases may include:
+For the distinction between website updates and GitHub release alerts, see
+[presentation update options on What's New Central](https://whatsnewcentral.com/downloads.html#presentation-updates).
 
-- Microsoft 365 Copilot updates.
-- Microsoft Teams updates, including meetings, calling, and devices.
-- Agent 365 updates.
-- Special editions covering major events or announcements.
+## Publisher and availability
 
-Each release includes a summary of the edition and its available files.
-
-## Versions and corrections
-
-Presentations reflect the information available when they were prepared. Features, availability, licensing, and rollout timelines may change.
-
-Check the linked Microsoft sources for current details before making deployment or purchasing decisions.
-
-Significant corrections will be identified in release notes. Where a revised edition is published, its revision will be clearly labelled.
-
-## Publisher and status
-
-Maintained by [Martin Boam](https://github.com/martinboam) as part of What's New Central.
-
-Publication here does not imply official Microsoft endorsement.
-Microsoft and other product names and logos are trademarks of their respective owners.
+Maintained as part of What's New Central. Publication here does not imply
+official Microsoft endorsement. Presentations reflect information available
+when prepared; features, availability, licensing and rollout dates can change.
+Check the presentation's linked Microsoft sources for current details.
 
 ## Licensing and reuse
 
-A content licence has not yet been applied to this repository or its
-release attachments. Public availability does not itself grant permission to adapt or redistribute the presentations.
-
-Microsoft and third-party materials remain subject to their respective rights and applicable permissions. Follow any notices included in the individual presentations.
-
-Licensing and reuse guidance will be updated before the first edition is published.
+A content licence has not been applied to this repository or its release
+attachments. Public availability does not itself grant permission to adapt or
+redistribute the presentations. Follow notices in each presentation.
+Microsoft and third-party materials remain subject to their respective rights
+and applicable permissions.
 
 ## Feedback
 
-Found an error, a broken download, or have a suggestion?
-
-[Open an issue](https://github.com/martinboam/whats-new-presentations/issues) and include the edition and slide number where relevant.
-
-Do not include confidential information, customer data, or credentials in public issues.
+[Open an issue](https://github.com/martinboam/whats-new-presentations/issues)
+for a broken download, presentation error or suggestion. Include the edition
+and slide number where relevant. Do not include confidential information,
+customer data or credentials in public issues.
