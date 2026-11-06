@@ -3,8 +3,9 @@
 # What's New Presentations
 
 Monthly Microsoft 365 Copilot, Microsoft Teams and Agent 365 presentations,
-curated by [Martin Boam](https://github.com/martinboam) for customers, partners
-and Microsoft colleagues.
+created and curated by [Martin Boam](https://github.com/martinboam) for community
+learning, education and knowledge sharing. Available to customers, partners,
+Microsoft colleagues and the wider community.
 
 [![Browse the full library](assets/readme/browse-library.svg)](https://whatsnewcentral.com/downloads.html)
 [![Browse GitHub downloads](assets/readme/github-downloads.svg)](https://github.com/martinboam/whats-new-presentations/releases)
@@ -71,18 +72,52 @@ For the distinction between website updates and GitHub release alerts, see
 
 ## Publisher and availability
 
-Maintained as part of What's New Central. Publication here does not imply
-official Microsoft endorsement. Presentations reflect information available
-when prepared; features, availability, licensing and rollout dates can change.
-Check the presentation's linked Microsoft sources for current details.
+Martin Boam is the sole creator and owner of the original presentation content
+and works at Microsoft. These presentations are shared with the community as
+part of What's New Central; publication here does not imply official Microsoft
+endorsement.
+
+Presentations reflect information available when prepared; features,
+availability, licensing and rollout dates can change. Check the presentation's
+linked Microsoft sources for current details.
+
+## Sources
+
+Presentations bring together information from Microsoft blog posts and product
+announcements, the public
+[Microsoft 365 roadmap](https://www.microsoft.com/en-us/microsoft-365/roadmap),
+and Microsoft 365 Message Center announcements.
+
+Source access and terms vary, particularly for Message Center: its announcements
+are not assumed to be public. Tenant-specific, confidential or restricted
+information must not be shared here. Public availability of a source does not
+itself grant permission to reuse its text, images or other protected material.
 
 ## Licensing and reuse
 
-A content licence has not been applied to this repository or its release
-attachments. Public availability does not itself grant permission to adapt or
-redistribute the presentations. Follow notices in each presentation.
-Microsoft and third-party materials remain subject to their respective rights
-and applicable permissions.
+**Martin Boam's original presentation and companion content distributed through
+this repository and its GitHub Releases is licensed under
+[Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).**
+Copyright (c) 2026 Martin Boam. See [LICENSE.txt](LICENSE.txt) for the scope and
+full legal terms.
+
+You may present, copy, adapt and redistribute the licensed content, including
+for commercial training and workshops. Give appropriate credit, link to the
+licence and identify any changes. Learning and education are the purpose of
+this resource, not an additional restriction on the licence.
+
+Microsoft and third-party materials, including quoted source text, screenshots,
+logos and trademarks, are excluded and remain subject to their respective
+rights, notices and permissions. This content licence does not license the
+repository's workflows or automation code, and reuse must not imply endorsement
+by Martin Boam or Microsoft.
+
+Suggested attribution:
+
+> "[Presentation title]" by Martin Boam / What's New Central
+> (https://whatsnewcentral.com), licensed content under CC BY 4.0
+> (https://creativecommons.org/licenses/by/4.0/). Adapted by [name] with [changes],
+> if modified.
 
 ## Feedback
 
