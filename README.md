@@ -1,8 +1,18 @@
+![What's New Central: monthly Microsoft 365 Copilot, Microsoft Teams and Agent 365 presentations](assets/readme/banner.svg)
+
 # What's New Presentations
 
 Monthly Microsoft 365 Copilot, Microsoft Teams and Agent 365 presentations,
 curated by [Martin Boam](https://github.com/martinboam) for customers, partners
 and Microsoft colleagues.
+
+[![Browse the full library](assets/readme/browse-library.svg)](https://whatsnewcentral.com/downloads.html)
+[![Browse GitHub downloads](assets/readme/github-downloads.svg)](https://github.com/martinboam/whats-new-presentations/releases)
+[![Learn how to get release alerts](assets/readme/release-alerts.svg)](#get-notified)
+
+**Quick links:** [Full library](https://whatsnewcentral.com/downloads.html) |
+[GitHub downloads](https://github.com/martinboam/whats-new-presentations/releases) |
+[Get release alerts](#get-notified)
 
 ## One library, two complementary services
 
@@ -84,7 +94,8 @@ customer data or credentials in public issues.
 ## Automation maintenance
 
 Publishing automation uses only SHA-pinned `actions/checkout` and
-`actions/setup-node`. Dependabot proposes monthly Actions updates; maintainers
-review and merge these pull requests manually, preserving full-SHA pins.
+`actions/setup-node`. Dependabot proposes monthly Actions updates and security
+fixes when available; maintainers review and merge these pull requests manually,
+preserving full-SHA pins.
 The main branch blocks deletion and force pushes while allowing normal commits
 and the automated latest-edition README refresh.

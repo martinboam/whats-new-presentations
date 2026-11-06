@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="432" viewBox="0 0 1200 432" role="img" aria-labelledby="title description">
+  <title id="title">What's New Presentations</title>
+  <desc id="description">What's New Central. Monthly Microsoft updates for customers, partners and Microsoft colleagues. Microsoft 365 Copilot, Microsoft Teams and Agent 365.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#161b22"/>
+      <stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#58a6ff"/>
+      <stop offset="1" stop-color="#a371f7"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#58a6ff"/>
+      <stop offset="1" stop-color="#3fb950"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="1198" height="430" rx="20" fill="url(#background)" stroke="#30363d" stroke-width="2"/>
+  <path d="M24 1H1176" stroke="url(#brand)" stroke-width="3"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="44" y="34" width="62" height="44" rx="9" fill="url(#mark)"/>
+    <text x="75" y="62" text-anchor="middle" fill="#0d1117" font-size="17" font-weight="800">WNC</text>
+    <text x="122" y="62" fill="#e6edf3" font-size="20" font-weight="600">WHAT'S NEW CENTRAL</text>
+    <text x="44" y="151" fill="#e6edf3" font-size="54" font-weight="700">What's New Presentations</text>
+    <text x="44" y="195" fill="#b1bac4" font-size="23">Monthly Microsoft updates, ready to present.</text>
+    <text x="44" y="230" fill="#b1bac4" font-size="18">For customers, partners and Microsoft colleagues</text>
+
+    <rect x="44" y="272" width="352" height="116" rx="12" fill="#161b22" stroke="#30363d"/>
+    <rect x="64" y="298" width="52" height="52" rx="12" fill="#1b3048"/>
+    <path d="M90 306L95 319L108 324L95 329L90 342L85 329L72 324L85 319Z" fill="none" stroke="#58a6ff" stroke-width="2.5" stroke-linejoin="round"/>
+    <text x="132" y="321" fill="#e6edf3" font-size="20" font-weight="600">Microsoft 365 Copilot</text>
+    <text x="132" y="351" fill="#b1bac4" font-size="16">Apps, agents &amp; governance</text>
+
+    <rect x="416" y="272" width="352" height="116" rx="12" fill="#161b22" stroke="#30363d"/>
+    <rect x="436" y="298" width="52" height="52" rx="12" fill="#30243f"/>
+    <g fill="none" stroke="#a371f7" stroke-width="2.5" stroke-linecap="round">
+      <circle cx="458" cy="316" r="6"/>
+      <circle cx="473" cy="320" r="5"/>
+      <path d="M446 338V334C446 323 470 323 470 334V338M473 329C480 329 481 333 481 338"/>
+    </g>
+    <text x="504" y="321" fill="#e6edf3" font-size="20" font-weight="600">Microsoft Teams</text>
+    <text x="504" y="351" fill="#b1bac4" font-size="16">Meet, collaborate &amp; connect</text>
+
+    <rect x="788" y="272" width="368" height="116" rx="12" fill="#161b22" stroke="#30363d"/>
+    <rect x="808" y="298" width="52" height="52" rx="12" fill="#1c3528"/>
+    <g fill="none" stroke="#3fb950" stroke-width="2.5" stroke-linejoin="round">
+      <rect x="827" y="307" width="14" height="12" rx="3"/>
+      <path d="M834 319V327M820 327H848M820 327V332M848 327V332"/>
+      <rect x="814" y="332" width="12" height="10" rx="3"/>
+      <rect x="842" y="332" width="12" height="10" rx="3"/>
+    </g>
+    <text x="876" y="321" fill="#e6edf3" font-size="20" font-weight="600">Agent 365</text>
+    <text x="876" y="351" fill="#b1bac4" font-size="16">Manage &amp; govern agents</text>
+  </g>
+</svg>

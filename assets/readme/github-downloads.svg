@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="56" viewBox="0 0 240 56" role="img" aria-labelledby="title">
+  <title id="title">Browse presentation downloads in GitHub Releases</title>
+  <rect x="1" y="1" width="238" height="54" rx="10" fill="#30243f" stroke="#a371f7"/>
+  <g fill="none" stroke="#a371f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 16V32M27 25L34 32L41 25M22 33V39H46V33"/>
+  </g>
+  <text x="64" y="34" fill="#e6edf3" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">GitHub downloads</text>
+</svg>

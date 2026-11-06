@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="56" viewBox="0 0 240 56" role="img" aria-labelledby="title">
+  <title id="title">Read the instructions for subscribing to release alerts</title>
+  <rect x="1" y="1" width="238" height="54" rx="10" fill="#1c3528" stroke="#3fb950"/>
+  <g fill="none" stroke="#3fb950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M23 35H45L42 30V24C42 13 26 13 26 24V30ZM30 40C31 44 37 44 38 40M34 14V12"/>
+  </g>
+  <text x="64" y="34" fill="#e6edf3" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">Get release alerts</text>
+</svg>

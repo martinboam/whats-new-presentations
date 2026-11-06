@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="56" viewBox="0 0 240 56" role="img" aria-labelledby="title">
+  <title id="title">Browse the full library on What's New Central</title>
+  <rect x="1" y="1" width="238" height="54" rx="10" fill="#1b3048" stroke="#58a6ff"/>
+  <g fill="none" stroke="#58a6ff" stroke-width="2" stroke-linejoin="round">
+    <path d="M20 18H29C33 18 34 20 34 22V39C34 36 31 35 28 35H20ZM48 18H39C35 18 34 20 34 22V39C34 36 37 35 40 35H48Z"/>
+  </g>
+  <text x="65" y="34" fill="#e6edf3" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">Browse full library</text>
+</svg>
