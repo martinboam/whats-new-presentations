@@ -4,8 +4,8 @@
 
 Monthly Microsoft 365 Copilot, Microsoft Teams and Agent 365 presentations,
 created and curated by [Martin Boam](https://github.com/martinboam) for community
-learning, education and knowledge sharing. Available to customers, partners,
-Microsoft colleagues and the wider community.
+learning, education and knowledge sharing. For customers, partners and the
+wider community.
 
 [![Browse the full library](assets/readme/browse-library.svg)](https://whatsnewcentral.com/downloads.html)
 [![Browse GitHub downloads](assets/readme/github-downloads.svg)](https://github.com/martinboam/whats-new-presentations/releases)

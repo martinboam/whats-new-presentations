@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="432" viewBox="0 0 1200 432" role="img" aria-labelledby="title description">
   <title id="title">What's New Presentations</title>
-  <desc id="description">What's New Central. Monthly Microsoft updates for customers, partners and Microsoft colleagues. Microsoft 365 Copilot, Microsoft Teams and Agent 365.</desc>
+  <desc id="description">What's New Central. Monthly Microsoft updates for customers, partners and the wider community. Microsoft 365 Copilot, Microsoft Teams and Agent 365.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#161b22"/>
@@ -23,7 +23,7 @@
     <text x="122" y="62" fill="#e6edf3" font-size="20" font-weight="600">WHAT'S NEW CENTRAL</text>
     <text x="44" y="151" fill="#e6edf3" font-size="54" font-weight="700">What's New Presentations</text>
     <text x="44" y="195" fill="#b1bac4" font-size="23">Monthly Microsoft updates, ready to present.</text>
-    <text x="44" y="230" fill="#b1bac4" font-size="18">For customers, partners and Microsoft colleagues</text>
+    <text x="44" y="230" fill="#b1bac4" font-size="18">For customers, partners and the wider community</text>
 
     <rect x="44" y="272" width="352" height="116" rx="12" fill="#161b22" stroke="#30363d"/>
     <rect x="64" y="298" width="52" height="52" rx="12" fill="#1b3048"/>
