@@ -26,7 +26,7 @@ For the full library and editions not yet migrated, use What's New Central.
 <!-- latest-presentations:start -->
 | Product | Latest GitHub edition | Full library |
 |---|---|---|
-| Microsoft 365 Copilot | [Microsoft 365 Copilot - September 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/copilot-2026-09) | [Browse editions](https://whatsnewcentral.com/downloads.html?category=copilot) |
+| Microsoft 365 Copilot | [Microsoft 365 Copilot - October 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/Copilot-2026-10) | [Browse editions](https://whatsnewcentral.com/downloads.html?category=copilot) |
 | Microsoft Teams | [Microsoft Teams - August and September 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/teams-2026-09) | [Browse editions](https://whatsnewcentral.com/downloads.html?category=teams) |
 | Agent 365 | [Microsoft Agent 365 - September 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/agent365-2026-09) | [Browse editions](https://whatsnewcentral.com/downloads.html?category=agent365) |
 <!-- latest-presentations:end -->
