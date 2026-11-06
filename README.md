@@ -80,3 +80,11 @@ and applicable permissions.
 for a broken download, presentation error or suggestion. Include the edition
 and slide number where relevant. Do not include confidential information,
 customer data or credentials in public issues.
+
+## Automation maintenance
+
+Publishing automation uses only SHA-pinned `actions/checkout` and
+`actions/setup-node`. Dependabot proposes monthly Actions updates; maintainers
+review and merge these pull requests manually, preserving full-SHA pins.
+The main branch blocks deletion and force pushes while allowing normal commits
+and the automated latest-edition README refresh.
