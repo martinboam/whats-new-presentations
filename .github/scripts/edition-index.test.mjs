@@ -61,6 +61,24 @@ test('each product/month shows only its highest uploaded numeric revision, with 
   assert.ok(!calls.some(path => path.startsWith('releases/1/')));
 });
 
+test('special editions remain separate from monthly releases and their own numeric corrections', async () => {
+  const { github } = catalogue([
+    release(1, 'copilot-2026-03'),
+    release(2, 'copilot-2026-03-special-frontier'),
+    release(3, 'copilot-2026-03-special-frontier-r10'),
+    release(4, 'copilot-2026-03-special-frontier-r2'),
+    release(5, 'copilot-2026-11-special-ignite')
+  ]);
+  const index = await buildPresentationIndex(github);
+  assert.equal(index.editions.length, 3);
+  assert.match(index.latestSection, /tag\/copilot-2026-03\)/);
+  assert.doesNotMatch(index.latestSection, /special-/);
+  assert.match(index.archiveSection, /Microsoft Copilot \(special edition\)/);
+  assert.match(index.archiveSection, /tag\/copilot-2026-03-special-frontier-r10\)/);
+  assert.doesNotMatch(index.archiveSection, /tag\/copilot-2026-03-special-frontier-r2\)/);
+  assert.ok(index.archiveSection.indexOf('copilot-2026-03)') < index.archiveSection.indexOf('copilot-2026-03-special-frontier-r10)'));
+});
+
 test('drafts, prereleases, unrelated tags and non-presentation or unfinished assets cannot enter either table', async () => {
   const { github } = catalogue([
     release(1, 'copilot-2026-11', { draft: true }),

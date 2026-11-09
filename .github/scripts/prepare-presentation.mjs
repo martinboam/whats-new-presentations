@@ -12,7 +12,7 @@ const REPOSITORY = 'martinboam/whats-new-presentations';
 export function validateInputs(inputs, repository) {
   if (repository !== REPOSITORY) throw new Error('Unexpected publishing repository.');
   if (!/^[0-9a-f-]{36}$/i.test(inputs.request_id)) throw new Error('Invalid request ID.');
-  if (!/^(copilot|teams|agent365)-\d{4}-(0[1-9]|1[0-2])(?:-r(?:[2-9]|[1-9]\d+))?$/i.test(inputs.tag)) {
+  if (!/^(copilot|teams|agent365)-\d{4}-(0[1-9]|1[0-2])(?:-special-[a-z][a-z0-9]{0,39})?(?:-r(?:[2-9]|[1-9]\d+))?$/i.test(inputs.tag)) {
     throw new Error('Invalid release tag.');
   }
   if (typeof inputs.filename !== 'string' || inputs.filename.length > 255 ||

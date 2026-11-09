@@ -8,11 +8,11 @@ const PRODUCTS = { copilot: 'Microsoft Copilot', teams: 'Microsoft Teams', agent
 
 function edition(release) {
   if (release.draft !== false || release.prerelease !== false || !release.published_at) return null;
-  const match = /^(copilot|teams|agent365)-(\d{4})-(0[1-9]|1[0-2])(?:-r([2-9]|[1-9]\d+))?$/i.exec(release.tag_name);
+  const match = /^(copilot|teams|agent365)-(\d{4})-(0[1-9]|1[0-2])(?:-special-([a-z][a-z0-9]{0,39}))?(?:-r([2-9]|[1-9]\d+))?$/i.exec(release.tag_name);
   if (!match) return null;
   if (!Number.isSafeInteger(release.id) || release.id <= 0) throw new Error('Invalid release ID.');
   return { release, product: match[1].toLowerCase(), date: Number(`${match[2]}${match[3]}`),
-    revision: Number(match[4] || 1) };
+    special: (match[4] || '').toLowerCase(), revision: Number(match[5] || 1) };
 }
 
 function markdownText(value) {
@@ -41,10 +41,11 @@ export async function buildPresentationIndex(github) {
     if (releases.length < 100) break;
   }
   candidates.sort((a, b) => b.date - a.date || a.product.localeCompare(b.product) ||
+    a.special.localeCompare(b.special) ||
     b.revision - a.revision || b.release.id - a.release.id);
   const editions = new Map();
   for (const candidate of candidates) {
-    const key = `${candidate.product}:${candidate.date}`;
+    const key = `${candidate.product}:${candidate.date}:${candidate.special}`;
     if (editions.has(key)) continue;
     const presentations = [];
     for (let page = 1; ; page++) {
@@ -59,7 +60,7 @@ export async function buildPresentationIndex(github) {
   const entries = [...editions.values()];
   const latest = new Map();
   for (const candidate of entries) {
-    if (!latest.has(candidate.product)) latest.set(candidate.product, candidate);
+    if (!candidate.special && !latest.has(candidate.product)) latest.set(candidate.product, candidate);
   }
   const rows = Object.entries(PRODUCTS).map(([product, label]) => {
     const candidate = latest.get(product);
@@ -67,7 +68,7 @@ export async function buildPresentationIndex(github) {
   });
   const archiveRows = entries.map(candidate => {
     const date = String(candidate.date);
-    return `| ${date.slice(0, 4)}-${date.slice(4)} | ${PRODUCTS[candidate.product]} | ${releaseLink(candidate.release)} | ${downloadLinks(candidate)} |`;
+    return `| ${date.slice(0, 4)}-${date.slice(4)} | ${PRODUCTS[candidate.product]}${candidate.special ? ' (special edition)' : ''} | ${releaseLink(candidate.release)} | ${downloadLinks(candidate)} |`;
   });
   return {
     editions: entries,
@@ -162,7 +163,7 @@ export async function updateReadme({ token, repository, request = fetch }) {
     console.log('Updated latest links and newest-first presentation archive.');
     changed = true;
   }
-  const latestChanged = await updateLatestRelease(github, index.editions);
+  const latestChanged = await updateLatestRelease(github, index.editions.filter(candidate => !candidate.special));
   if (!changed && !latestChanged) console.log('Presentation index and Latest badge are already up to date.');
   return changed || latestChanged;
 }

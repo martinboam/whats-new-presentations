@@ -50,6 +50,11 @@ not the date they were uploaded. Moving an older presentation to GitHub does not
 move it above a newer edition. Combined-month editions use their final month.
 The latest available revision is shown for each product/month; earlier revisions
 remain accessible under [Releases](https://github.com/martinboam/whats-new-presentations/releases).
+Special editions have their own labelled archive row and revision history, so a
+Frontier edition does not replace the regular monthly Copilot presentation.
+The product shortcuts and automatic Latest badge use monthly editions.
+GitHub's native Releases list has its own ordering; the Latest badge does not
+force its first item. Use this archive for reliable edition-date order.
 
 <!-- presentation-archive:start -->
 | Edition | Product | Release details | Download |
