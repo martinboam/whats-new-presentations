@@ -8,11 +8,11 @@ learning, education and knowledge sharing. For customers, partners and the
 wider community.
 
 [![Browse the full library](assets/readme/browse-library.svg)](https://whatsnewcentral.com/downloads.html)
-[![Browse GitHub downloads](assets/readme/github-downloads.svg)](#presentation-archive)
+[![Browse GitHub downloads](assets/readme/github-downloads.svg)](https://github.com/martinboam/whats-new-presentations#presentation-archive)
 [![Learn how to get release alerts](assets/readme/release-alerts.svg)](#get-notified)
 
 **Quick links:** [Full library](https://whatsnewcentral.com/downloads.html) |
-[GitHub downloads](#presentation-archive) |
+[GitHub archive](https://github.com/martinboam/whats-new-presentations#presentation-archive) |
 [Get release alerts](#get-notified)
 
 ## One library, two complementary services
@@ -20,9 +20,10 @@ wider community.
 - **[What's New Central](https://whatsnewcentral.com/downloads.html)** is the
   main catalogue: browse products and editions, see covers, read summaries and
   explore related resources.
-- **This repository's [Releases](https://github.com/martinboam/whats-new-presentations/releases)**
-  provide published presentation files and GitHub release notifications.
-  Each release links back to its edition on What's New Central.
+- **The [GitHub presentation archive](https://github.com/martinboam/whats-new-presentations#presentation-archive)**
+  lists published editions newest first. Files are hosted in GitHub Releases,
+  which also provide release notifications. Each release links back to its
+  edition on What's New Central.
 
 GitHub distribution is being introduced gradually. Editions not yet available
 here remain downloadable from What's New Central. A release subscription covers
