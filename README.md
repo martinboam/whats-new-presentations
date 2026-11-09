@@ -8,11 +8,11 @@ learning, education and knowledge sharing. For customers, partners and the
 wider community.
 
 [![Browse the full library](assets/readme/browse-library.svg)](https://whatsnewcentral.com/downloads.html)
-[![Browse GitHub downloads](assets/readme/github-downloads.svg)](https://github.com/martinboam/whats-new-presentations/releases)
+[![Browse GitHub downloads](assets/readme/github-downloads.svg)](#presentation-archive)
 [![Learn how to get release alerts](assets/readme/release-alerts.svg)](#get-notified)
 
 **Quick links:** [Full library](https://whatsnewcentral.com/downloads.html) |
-[GitHub downloads](https://github.com/martinboam/whats-new-presentations/releases) |
+[GitHub downloads](#presentation-archive) |
 [Get release alerts](#get-notified)
 
 ## One library, two complementary services
@@ -31,26 +31,52 @@ new GitHub publications, not every edition already available on the website.
 ## Latest editions published on GitHub
 
 These links are maintained automatically from published releases, by edition
-date rather than upload date. This is a shortcut, not a second catalogue.
+date rather than upload date. Download the latest presentation for each product
+here, or browse the newest-first archive below.
 For the full library and editions not yet migrated, use What's New Central.
 
 <!-- latest-presentations:start -->
-| Product | Latest GitHub edition | Full library |
-|---|---|---|
-| Microsoft 365 Copilot | [Microsoft 365 Copilot - October 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/Copilot-2026-10) | [Browse editions](https://whatsnewcentral.com/downloads.html?category=copilot) |
-| Microsoft Teams | [Microsoft Teams - August and September 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/teams-2026-09) | [Browse editions](https://whatsnewcentral.com/downloads.html?category=teams) |
-| Agent 365 | [Microsoft Agent 365 - September 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/agent365-2026-09) | [Browse editions](https://whatsnewcentral.com/downloads.html?category=agent365) |
+| Product | Latest GitHub edition | Download | Full library |
+|---|---|---|---|
+| Microsoft Copilot | [Microsoft 365 Copilot - October 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/Copilot-2026-10) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/Copilot-2026-10/Whats-New-in-Microsoft-Copilot-October-2026.pptx) | [Browse editions](https://whatsnewcentral.com/downloads.html?category=copilot) |
+| Microsoft Teams | [Microsoft Teams - August and September 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/teams-2026-09) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/teams-2026-09/Whats-New-in-Teams-Calling-Meetings-Devices-August-September_2026.pptx) | [Browse editions](https://whatsnewcentral.com/downloads.html?category=teams) |
+| Agent 365 | [Microsoft Agent 365 - September 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/agent365-2026-09) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/agent365-2026-09/Whats_new_in_Microsoft_Agent_365_-_September_2026.pptx) | [Browse editions](https://whatsnewcentral.com/downloads.html?category=agent365) |
 <!-- latest-presentations:end -->
+
+## Presentation archive
+
+Published GitHub editions are listed newest first by their **edition year/month**,
+not the date they were uploaded. Moving an older presentation to GitHub does not
+move it above a newer edition. Combined-month editions use their final month.
+The latest available revision is shown for each product/month; earlier revisions
+remain accessible under [Releases](https://github.com/martinboam/whats-new-presentations/releases).
+
+<!-- presentation-archive:start -->
+| Edition | Product | Release details | Download |
+|---|---|---|---|
+| 2026-10 | Microsoft Copilot | [Microsoft 365 Copilot - October 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/Copilot-2026-10) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/Copilot-2026-10/Whats-New-in-Microsoft-Copilot-October-2026.pptx) |
+| 2026-09 | Agent 365 | [Microsoft Agent 365 - September 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/agent365-2026-09) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/agent365-2026-09/Whats_new_in_Microsoft_Agent_365_-_September_2026.pptx) |
+| 2026-09 | Microsoft Copilot | [Microsoft 365 Copilot - September 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/copilot-2026-09) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/copilot-2026-09/Whats-New-in-Microsoft-Copilot-September-2026_.pptx) |
+| 2026-09 | Microsoft Teams | [Microsoft Teams - August and September 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/teams-2026-09) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/teams-2026-09/Whats-New-in-Teams-Calling-Meetings-Devices-August-September_2026.pptx) |
+| 2026-08 | Microsoft Copilot | [Microsoft 365 Copilot - August 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/copilot-2026-08) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/copilot-2026-08/Whats-New-in-Microsoft365-Copilot-August-2026.pptx) |
+<!-- presentation-archive:end -->
+
+For editions not yet migrated to GitHub, [browse the full presentation library](https://whatsnewcentral.com/downloads.html).
 
 ## Download a presentation
 
-Open an edition above or visit [Releases](https://github.com/martinboam/whats-new-presentations/releases).
+Use a **PowerPoint** or **PDF** link above to download directly, or open its release details.
 Use its download link, or expand **Assets** and choose the PowerPoint or PDF.
 A GitHub account is not required to download public release attachments.
 GitHub's automatically generated source-code ZIP/TAR files are not presentations.
 
 The website's download button points directly to the GitHub attachment for
 migrated editions. You do not need to download the same presentation twice.
+
+GitHub has only one repository-wide **Latest** badge. Automation keeps it on an
+edition from the newest month available here, preserving the current selection
+when multiple products share that month. Use the per-product links above rather
+than that single badge to find the latest edition of a particular product.
 
 ## Get notified
 
@@ -133,4 +159,7 @@ Publishing automation uses only SHA-pinned `actions/checkout` and
 fixes when available; maintainers review and merge these pull requests manually,
 preserving full-SHA pins.
 The main branch blocks deletion and force pushes while allowing normal commits
-and the automated latest-edition README refresh.
+and the automated edition-index refresh. The workflow refreshes only the
+`latest-presentations` and `presentation-archive` sections and the single Latest
+badge. It does not replace presentation files, alter edition dates, or change
+existing download URLs.

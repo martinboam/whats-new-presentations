@@ -24,7 +24,9 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
           node-version: '20'
-      - name: Refresh README shortcuts from published releases
+      - name: Test edition ordering and release safety
+        run: node --test .github/scripts/edition-index.test.mjs
+      - name: Refresh edition index and Latest badge from published releases
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPOSITORY: ${{ github.repository }}
