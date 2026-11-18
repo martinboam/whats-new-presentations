@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  buildPresentationIndex, replaceLatestSection, replaceArchiveSection,
+  buildPresentationIndex, replaceLatestSection, replaceArchiveSection, replaceRecentSection,
   updateLatestRelease, updateReadme
 } from './update-readme.mjs';
 
@@ -13,6 +13,7 @@ const release = (id, tag, overrides = {}) => ({
 });
 const readme = [
   'Manual introduction',
+  '<!-- recent-publications:start -->', 'old', '<!-- recent-publications:end -->',
   '<!-- latest-presentations:start -->', 'old', '<!-- latest-presentations:end -->',
   '## Presentation archive',
   '<!-- presentation-archive:start -->', 'old', '<!-- presentation-archive:end -->',
@@ -48,7 +49,7 @@ test('archive sorts edition year/month, not upload date, release ID or product-w
 });
 
 test('each product/month shows only its highest uploaded numeric revision, with fallback for unfinished corrections', async () => {
-  const { github, calls } = catalogue([
+  const { github } = catalogue([
     release(1, 'copilot-2026-09'),
     release(2, 'copilot-2026-09-r2'),
     release(3, 'copilot-2026-09-r10'),
@@ -58,7 +59,28 @@ test('each product/month shows only its highest uploaded numeric revision, with 
   const index = await buildPresentationIndex(github);
   assert.deepEqual(index.editions.map(entry => entry.release.id), [5, 3]);
   assert.doesNotMatch(index.archiveSection, /tag\/copilot-2026-09-r2\)/);
-  assert.ok(!calls.some(path => path.startsWith('releases/1/')));
+});
+
+test('recent publications use publication time, include special editions and backfills, and limit to five', async () => {
+  const { github } = catalogue([
+    release(99, 'copilot-2026-12', { published_at: '2026-11-01T00:00:00Z' }),
+    release(1, 'agent365-2026-11-special-ignite', { published_at: '2026-11-18T13:41:05Z' }),
+    release(2, 'teams-2026-01', { published_at: '2026-11-17T09:00:00Z' }),
+    release(3, 'copilot-2026-10-r2', { published_at: '2026-11-16T00:00:00Z' }),
+    release(4, 'copilot-2026-10', { published_at: '2026-11-15T00:00:00Z' }),
+    release(5, 'teams-2026-10', { published_at: '2026-11-14T00:00:00Z' })
+  ]);
+  const index = await buildPresentationIndex(github);
+  const rows = index.recentSection.split('\n').slice(2);
+  assert.equal(rows.length, 5);
+  for (const [i, tag] of ['agent365-2026-11-special-ignite', 'teams-2026-01',
+    'copilot-2026-10-r2', 'copilot-2026-10', 'teams-2026-10'].entries()) {
+    assert.ok(rows[i].includes(`/tag/${tag})`));
+  }
+  assert.match(rows[0], /2026-11-18 13:41 \| Agent 365 \(special edition\)/);
+  assert.match(rows[0], /releases\/download\/agent365-2026-11-special-ignite/);
+  assert.doesNotMatch(index.latestSection, /special-/);
+  assert.match(index.latestSection, /tag\/copilot-2026-12\)/);
 });
 
 test('special editions remain separate from monthly releases and their own numeric corrections', async () => {
@@ -92,6 +114,8 @@ test('drafts, prereleases, unrelated tags and non-presentation or unfinished ass
   ] });
   const index = await buildPresentationIndex(github);
   assert.equal(index.editions.length, 1);
+  assert.match(index.recentSection, /Teams - August and September 2026/);
+  assert.doesNotMatch(index.recentSection, /tag\/(?:copilot|other)-/);
   assert.match(index.archiveSection, /\| 2026-09 \| Microsoft Teams \| \[Teams - August and September 2026\]/);
   assert.match(index.latestSection, /Microsoft Copilot \| Not yet published/);
 });
@@ -101,7 +125,7 @@ test('direct links preserve tag and filename case, encode names and use only the
     1: [asset, { ...asset, name: 'October (PDF).PDF', browser_download_url: 'https://evil.test/file.pdf' }]
   });
   const index = await buildPresentationIndex(github);
-  for (const section of [index.latestSection, index.archiveSection]) {
+  for (const section of [index.latestSection, index.archiveSection, index.recentSection]) {
     assert.ok(section.includes('releases/download/Copilot-2026-10/October%20deck.pptx'));
     assert.ok(section.includes('releases/download/Copilot-2026-10/October%20%28PDF%29.PDF'));
     assert.ok(section.includes('Copilot \\| \\[notes\\] October'));
@@ -130,20 +154,25 @@ test('empty catalogues are explicit and malformed API data fails rather than pro
   const index = await buildPresentationIndex(async () => []);
   assert.equal(index.editions.length, 0);
   assert.match(index.archiveSection, /No presentation editions/);
+  assert.match(index.recentSection, /No presentation editions/);
   await assert.rejects(buildPresentationIndex(async () => ({})), /Invalid GitHub releases/);
   await assert.rejects(buildPresentationIndex(async path =>
     path.startsWith('releases?') ? [release(1, 'teams-2026-10')] : {}), /Invalid GitHub assets/);
   await assert.rejects(buildPresentationIndex(async () => [release(0, 'teams-2026-10')]), /Invalid release ID/);
+  await assert.rejects(buildPresentationIndex(async () =>
+    [release(1, 'teams-2026-10', { published_at: 'invalid' })]), /Invalid release publication date/);
 });
 
-test('both generated blocks preserve manual content and CRLF, and missing or duplicate markers fail explicitly', () => {
+test('all generated blocks preserve manual content and CRLF, and missing or duplicate markers fail explicitly', () => {
   const original = readme.replace(/\n/g, '\r\n');
-  const result = replaceArchiveSection(replaceLatestSection(original, 'new latest'), 'new archive');
+  const result = replaceRecentSection(
+    replaceArchiveSection(replaceLatestSection(original, 'new latest'), 'new archive'), 'new recent');
   assert.ok(result.startsWith('Manual introduction\r\n'));
   assert.ok(result.endsWith('Manual licensing and attribution'));
   assert.ok(result.includes('\r\nnew archive\r\n'));
+  assert.ok(result.includes('\r\nnew recent\r\n'));
   assert.doesNotMatch(result, /(?<!\r)\n/);
-  for (const replace of [replaceLatestSection, replaceArchiveSection]) {
+  for (const replace of [replaceLatestSection, replaceArchiveSection, replaceRecentSection]) {
     assert.throws(() => replace('', 'new'), /marker pair/);
     assert.throws(() => replace(readme + readme, 'new'), /marker pair/);
   }
@@ -227,7 +256,8 @@ test('README update is SHA-guarded, preserves manual text, refreshes the badge a
 
 test('an unchanged README does not prevent repairing a stale Latest badge', async () => {
   const index = await buildPresentationIndex(catalogue([release(1, 'Copilot-2026-10')]).github);
-  const original = replaceArchiveSection(replaceLatestSection(readme, index.latestSection), index.archiveSection);
+  const original = replaceRecentSection(
+    replaceArchiveSection(replaceLatestSection(readme, index.latestSection), index.archiveSection), index.recentSection);
   const api = apiFixture({ original });
   assert.equal(await updateReadme({ token: 'test-only', repository, request: api.request }), true);
   assert.deepEqual(api.writes.map(write => write.method), ['PATCH']);

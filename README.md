@@ -12,8 +12,26 @@ wider community.
 [![Learn how to get release alerts](assets/readme/release-alerts.svg)](#get-notified)
 
 **Quick links:** [Full library](https://whatsnewcentral.com/downloads.html) |
+[Recently published](#recently-published) |
 [GitHub archive](https://github.com/martinboam/whats-new-presentations#presentation-archive) |
 [Get release alerts](#get-notified)
+
+## Recently published
+
+The five most recently published presentations on GitHub, newest publication first,
+including special editions, corrections and older editions newly added to GitHub.
+Publication time is not the edition month. For edition-date order, use the
+[full presentation archive](#presentation-archive).
+
+<!-- recent-publications:start -->
+| Published (UTC) | Product | Release details | Download |
+|---|---|---|---|
+| 2026-11-18 13:41 | Agent 365 (special edition) | [Whats new in Microsoft Agent 365 - MS Ignite 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/agent365-2026-11-special-microsoftignite2026) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/agent365-2026-11-special-microsoftignite2026/Whats_new_in_Microsoft_Agent_365_-_MS_Ignite_2026.pptx) |
+| 2026-11-09 16:50 | Microsoft Copilot | [Microsoft Copilot - July 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/copilot-2026-07) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/copilot-2026-07/Whats-New-in-Microsoft365-Copilot-July-2026.pptx) |
+| 2026-11-09 16:50 | Microsoft Teams (special edition) | [Whats New in Teams Calling Meetings Devices - June 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/teams-2026-06-special-infocomm) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/teams-2026-06-special-infocomm/Whats-New-in-Teams-Calling-Meetings-Devices-June_2026.pptx) |
+| 2026-11-09 16:50 | Microsoft Teams | [Microsoft Teams - July 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/teams-2026-07) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/teams-2026-07/Whats-New-in-Teams-Calling-Meetings-Devices-July-2026.pptx) |
+| 2026-11-09 16:50 | Agent 365 | [Microsoft Agent 365 - June and July 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/agent365-2026-07) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/agent365-2026-07/Whats-New-in-Agent-365-June-July-2026.pptx) |
+<!-- recent-publications:end -->
 
 ## One library, two complementary services
 
@@ -29,15 +47,16 @@ GitHub distribution is being introduced gradually. Editions not yet available
 here remain downloadable from What's New Central. A release subscription covers
 new GitHub publications, not every edition already available on the website.
 
-## Latest editions published on GitHub
+## Latest regular monthly editions
 
 These links are maintained automatically from published releases, by edition
-date rather than upload date. Download the latest presentation for each product
-here, or browse the newest-first archive below.
+date rather than upload date. Special editions such as Ignite appear in
+[Recently published](#recently-published) and the [archive](#presentation-archive);
+they do not replace these regular monthly shortcuts.
 For the full library and editions not yet migrated, use What's New Central.
 
 <!-- latest-presentations:start -->
-| Product | Latest GitHub edition | Download | Full library |
+| Product | Latest regular monthly edition | Download | Full library |
 |---|---|---|---|
 | Microsoft Copilot | [Microsoft 365 Copilot - October 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/Copilot-2026-10) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/Copilot-2026-10/Whats-New-in-Microsoft-Copilot-October-2026.pptx) | [Browse editions](https://whatsnewcentral.com/downloads.html?category=copilot) |
 | Microsoft Teams | [Microsoft Teams - August and September 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/teams-2026-09) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/teams-2026-09/Whats-New-in-Teams-Calling-Meetings-Devices-August-September_2026.pptx) | [Browse editions](https://whatsnewcentral.com/downloads.html?category=teams) |
@@ -183,6 +202,6 @@ fixes when available; maintainers review and merge these pull requests manually,
 preserving full-SHA pins.
 The main branch blocks deletion and force pushes while allowing normal commits
 and the automated edition-index refresh. The workflow refreshes only the
-`latest-presentations` and `presentation-archive` sections and the single Latest
+`recent-publications`, `latest-presentations` and `presentation-archive` sections and the single Latest
 badge. It does not replace presentation files, alter edition dates, or change
 existing download URLs.

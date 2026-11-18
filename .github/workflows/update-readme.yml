@@ -26,7 +26,7 @@ jobs:
           node-version: '20'
       - name: Test edition ordering and release safety
         run: node --test .github/scripts/edition-index.test.mjs
-      - name: Refresh edition index and Latest badge from published releases
+      - name: Refresh recent publications, monthly links and edition archive
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPOSITORY: ${{ github.repository }}

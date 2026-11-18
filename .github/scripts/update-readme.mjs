@@ -11,8 +11,10 @@ function edition(release) {
   const match = /^(copilot|teams|agent365)-(\d{4})-(0[1-9]|1[0-2])(?:-special-([a-z][a-z0-9]{0,39}))?(?:-r([2-9]|[1-9]\d+))?$/i.exec(release.tag_name);
   if (!match) return null;
   if (!Number.isSafeInteger(release.id) || release.id <= 0) throw new Error('Invalid release ID.');
+  const publishedAt = Date.parse(release.published_at);
+  if (!Number.isFinite(publishedAt)) throw new Error('Invalid release publication date.');
   return { release, product: match[1].toLowerCase(), date: Number(`${match[2]}${match[3]}`),
-    special: (match[4] || '').toLowerCase(), revision: Number(match[5] || 1) };
+    special: (match[4] || '').toLowerCase(), revision: Number(match[5] || 1), publishedAt };
 }
 
 function markdownText(value) {
@@ -44,9 +46,9 @@ export async function buildPresentationIndex(github) {
     a.special.localeCompare(b.special) ||
     b.revision - a.revision || b.release.id - a.release.id);
   const editions = new Map();
+  const publications = [];
   for (const candidate of candidates) {
     const key = `${candidate.product}:${candidate.date}:${candidate.special}`;
-    if (editions.has(key)) continue;
     const presentations = [];
     for (let page = 1; ; page++) {
       const assets = await github(`releases/${candidate.release.id}/assets?per_page=100&page=${page}`);
@@ -55,7 +57,11 @@ export async function buildPresentationIndex(github) {
         Number.isSafeInteger(asset.size) && asset.size > 0 && /\.(pptx?|pdf)$/i.test(asset.name)));
       if (assets.length < 100) break;
     }
-    if (presentations.length) editions.set(key, { ...candidate, assets: presentations });
+    if (presentations.length) {
+      const publication = { ...candidate, assets: presentations };
+      publications.push(publication);
+      if (!editions.has(key)) editions.set(key, publication);
+    }
   }
   const entries = [...editions.values()];
   const latest = new Map();
@@ -70,9 +76,17 @@ export async function buildPresentationIndex(github) {
     const date = String(candidate.date);
     return `| ${date.slice(0, 4)}-${date.slice(4)} | ${PRODUCTS[candidate.product]}${candidate.special ? ' (special edition)' : ''} | ${releaseLink(candidate.release)} | ${downloadLinks(candidate)} |`;
   });
+  const recentRows = publications.sort((a, b) => b.publishedAt - a.publishedAt ||
+    b.release.id - a.release.id).slice(0, 5).map(candidate => {
+    const published = new Date(candidate.publishedAt).toISOString().slice(0, 16).replace('T', ' ');
+    return `| ${published} | ${PRODUCTS[candidate.product]}${candidate.special ? ' (special edition)' : ''} | ${releaseLink(candidate.release)} | ${downloadLinks(candidate)} |`;
+  });
   return {
     editions: entries,
-    latestSection: ['| Product | Latest GitHub edition | Download | Full library |', '|---|---|---|---|', ...rows].join('\n'),
+    recentSection: recentRows.length
+      ? ['| Published (UTC) | Product | Release details | Download |', '|---|---|---|---|', ...recentRows].join('\n')
+      : 'No presentation editions have been published on GitHub yet. [Browse the full library](https://whatsnewcentral.com/downloads.html).',
+    latestSection: ['| Product | Latest regular monthly edition | Download | Full library |', '|---|---|---|---|', ...rows].join('\n'),
     archiveSection: entries.length
       ? ['| Edition | Product | Release details | Download |', '|---|---|---|---|', ...archiveRows].join('\n')
       : 'No presentation editions have been published on GitHub yet. [Browse the full library](https://whatsnewcentral.com/downloads.html).'
@@ -100,6 +114,10 @@ export function replaceLatestSection(readme, section) {
 
 export function replaceArchiveSection(readme, section) {
   return replaceSection(readme, section, '<!-- presentation-archive:start -->', '<!-- presentation-archive:end -->');
+}
+
+export function replaceRecentSection(readme, section) {
+  return replaceSection(readme, section, '<!-- recent-publications:start -->', '<!-- recent-publications:end -->');
 }
 
 export async function updateLatestRelease(github, editions) {
@@ -149,7 +167,9 @@ export async function updateReadme({ token, repository, request = fetch }) {
   }
   const original = Buffer.from(file.content, 'base64').toString('utf8');
   const index = await buildPresentationIndex(github);
-  const updated = replaceArchiveSection(replaceLatestSection(original, index.latestSection), index.archiveSection);
+  const updated = replaceRecentSection(
+    replaceArchiveSection(replaceLatestSection(original, index.latestSection), index.archiveSection),
+    index.recentSection);
   let changed = false;
   if (updated !== original) {
     await github('contents/README.md', {
@@ -160,7 +180,7 @@ export async function updateReadme({ token, repository, request = fetch }) {
         content: Buffer.from(updated).toString('base64')
       })
     });
-    console.log('Updated latest links and newest-first presentation archive.');
+    console.log('Updated recent publications, monthly links and newest-first presentation archive.');
     changed = true;
   }
   const latestChanged = await updateLatestRelease(github, index.editions.filter(candidate => !candidate.special));
