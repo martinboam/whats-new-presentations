@@ -60,6 +60,7 @@ force its first item. Use this archive for reliable edition-date order.
 <!-- presentation-archive:start -->
 | Edition | Product | Release details | Download |
 |---|---|---|---|
+| 2026-11 | Agent 365 (special edition) | [Whats new in Microsoft Agent 365 - MS Ignite 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/agent365-2026-11-special-microsoftignite2026) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/agent365-2026-11-special-microsoftignite2026/Whats_new_in_Microsoft_Agent_365_-_MS_Ignite_2026.pptx) |
 | 2026-10 | Microsoft Copilot | [Microsoft 365 Copilot - October 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/Copilot-2026-10) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/Copilot-2026-10/Whats-New-in-Microsoft-Copilot-October-2026.pptx) |
 | 2026-09 | Agent 365 | [Microsoft Agent 365 - September 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/agent365-2026-09) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/agent365-2026-09/Whats_new_in_Microsoft_Agent_365_-_September_2026.pptx) |
 | 2026-09 | Microsoft Copilot | [Microsoft 365 Copilot - September 2026](https://github.com/martinboam/whats-new-presentations/releases/tag/copilot-2026-09) | [PowerPoint](https://github.com/martinboam/whats-new-presentations/releases/download/copilot-2026-09/Whats-New-in-Microsoft-Copilot-September-2026_.pptx) |
